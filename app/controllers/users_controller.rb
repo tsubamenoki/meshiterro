@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
-    @post_images=@user.post_images
+    @post_images=@user.post_images.page(params[:page])
     #findで見つけた特定のユーザーのALLを変数に収納
+    #ALLからpageのallに変更
   end
 
   def edit
